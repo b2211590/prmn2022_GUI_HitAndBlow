@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HandB.HABMainController">
+   <VBox alignment="CENTER" layoutX="43.0" layoutY="46.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="350.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <HBox alignment="TOP_CENTER" pickOnBounds="false" prefHeight="26.0" prefWidth="860.0" spacing="20.0">
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="222.0" text="ヒット：場所と色が一致">
+            <font>
+               <Font name="Hiragino Sans W7" size="18.0" />
+            </font>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+         </Label>
+         <Label alignment="CENTER" prefHeight="38.0" prefWidth="184.0" text="ブロー：色のみ一致">
+            <font>
+               <Font name="Hiragino Sans W7" size="18.0" />
+            </font>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+         </Label>
+      </HBox>
+      <HBox prefHeight="390.0" prefWidth="880.0" spacing="5.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox fx:id="gameArea1" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="1">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit1" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow1" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA1" fill="WHITE" onMouseClicked="#onClickedBT_A1" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB1" fill="WHITE" onMouseClicked="#onClickedBT_B1" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC1" fill="WHITE" onMouseClicked="#onClickedBT_C1" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD1" fill="WHITE" onMouseClicked="#onClickedBT_D1" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea2" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="2">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit2" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow2" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA2" fill="WHITE" onMouseClicked="#onClickedBT_A2" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB2" fill="WHITE" onMouseClicked="#onClickedBT_B2" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC2" fill="WHITE" onMouseClicked="#onClickedBT_C2" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD2" fill="WHITE" onMouseClicked="#onClickedBT_D2" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea3" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="3">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit3" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow3" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA3" fill="WHITE" onMouseClicked="#onClickedBT_A3" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB3" fill="WHITE" onMouseClicked="#onClickedBT_B3" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC3" fill="WHITE" onMouseClicked="#onClickedBT_C3" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD3" fill="WHITE" onMouseClicked="#onClickedBT_D3" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea4" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="4">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit4" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow4" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA4" fill="WHITE" onMouseClicked="#onClickedBT_A4" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB4" fill="WHITE" onMouseClicked="#onClickedBT_B4" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC4" fill="WHITE" onMouseClicked="#onClickedBT_C4" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD4" fill="WHITE" onMouseClicked="#onClickedBT_D4" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea5" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="5">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit5" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow5" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA5" fill="WHITE" onMouseClicked="#onClickedBT_A5" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB5" fill="WHITE" onMouseClicked="#onClickedBT_B5" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC5" fill="WHITE" onMouseClicked="#onClickedBT_C5" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD5" fill="WHITE" onMouseClicked="#onClickedBT_D5" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea6" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="6">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit6" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow6" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA6" fill="WHITE" onMouseClicked="#onClickedBT_A6" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB6" fill="WHITE" onMouseClicked="#onClickedBT_B6" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC6" fill="WHITE" onMouseClicked="#onClickedBT_C6" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD6" fill="WHITE" onMouseClicked="#onClickedBT_D6" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea7" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="7">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit7" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow7" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA7" fill="WHITE" onMouseClicked="#onClickedBT_A7" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB7" fill="WHITE" onMouseClicked="#onClickedBT_B7" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC7" fill="WHITE" onMouseClicked="#onClickedBT_C7" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD7" fill="WHITE" onMouseClicked="#onClickedBT_D7" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <VBox fx:id="gameArea8" disable="true" opacity="0.25" prefHeight="444.0" prefWidth="88.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="8">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="89.0" prefWidth="88.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Label fx:id="txtHit8" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ヒット">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="txtBlow8" alignment="CENTER" prefHeight="28.0" prefWidth="81.0" text="ブロー">
+                  <font>
+                     <Font name="Hiragino Sans W7" size="18.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="85.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballTryA8" fill="WHITE" onMouseClicked="#onClickedBT_A8" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryB8" fill="WHITE" onMouseClicked="#onClickedBT_B8" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryC8" fill="WHITE" onMouseClicked="#onClickedBT_C8" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+               <Circle fx:id="ballTryD8" fill="WHITE" onMouseClicked="#onClickedBT_D8" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Circle>
+            </VBox>
+         </VBox>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="403.0" stroke="BLACK" strokeType="INSIDE" width="3.0">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </Rectangle>
+         <VBox fx:id="answerArea" prefHeight="403.0" prefWidth="91.0" spacing="17.0">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="165.0" text="A">
+               <font>
+                  <Font name="Hiragino Sans W7" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="txtFinish" textFill="RED">
+               <font>
+                  <Font name="Hiragino Sans W7" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </Label>
+            <VBox prefHeight="230.0" prefWidth="106.0" spacing="10.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="27.0" right="10.0" top="20.0" />
+               </padding>
+               <Circle fx:id="ballAnsA" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Circle>
+               <Circle fx:id="ballAnsB" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
+               <Circle fx:id="ballAnsC" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
+               <Circle fx:id="ballAnsD" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
+            </VBox>
+         </VBox>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="860.0" spacing="20.0">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <Button fx:id="dicisionBtn" accessibleHelp="ゲームを始める" accessibleText="スタート" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickedDicisionBtn" prefHeight="50.0" prefWidth="100.0" text="判定">
+            <font>
+               <Font name="Hiragino Sans W4" size="24.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="colorUpdateBtn" accessibleHelp="ゲームを始める" accessibleText="スタート" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickedColorUpdateBtn" prefHeight="50.0" prefWidth="100.0" text="上書き">
+            <font>
+               <Font name="Hiragino Sans W4" size="24.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+         </Button>
+         <HBox prefHeight="80.0" prefWidth="430.0" spacing="10.0">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Circle fx:id="ballBlue" fill="BLUE" onMouseClicked="#onClickedBB" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <Circle fx:id="ballRed" fill="RED" onMouseClicked="#onClickedBR" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="ballYellow" fill="YELLOW" onMouseClicked="#onClickedBY" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="ballGreen" fill="GREEN" onMouseClicked="#onClickedBG" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="ballPink" fill="PINK" onMouseClicked="#onClickedBP" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="ballOrange" fill="ORANGE" onMouseClicked="#onClickedBO" radius="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+         </HBox>
+      </HBox>
+   </VBox>
+   <Label alignment="CENTER" layoutX="687.0" layoutY="572.0" prefHeight="23.0" prefWidth="217.0" text="created by B2211590 Tamura Shuto" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+</AnchorPane>
